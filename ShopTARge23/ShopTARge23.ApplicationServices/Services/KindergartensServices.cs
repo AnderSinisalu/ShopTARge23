@@ -86,6 +86,7 @@ namespace ShopTARge23.ApplicationServices.Services
                 .Where(x => x.KindergartenId == id)
                 .Select(y => new FileToDatabaseDto
                 {
+                    Id = y.Id,
                     ImageTitle = y.ImageTitle,
                     KindergartenId = y.KindergartenId,
                 }).ToArrayAsync();

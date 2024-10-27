@@ -7,13 +7,13 @@ using ShopTARge23.Models.Kindergarten;
 
 namespace ShopTARge23.Controllers
 {
-    public class KindergartensController : Controller
+    public class KindergartenController : Controller
     {
         private readonly ShopTARge23Context _context;
         private readonly IKindergartensServices _KindergartensServices;
         private readonly IFileServices _fileServices;
 
-        public KindergartensController
+        public KindergartenController
             (
                 ShopTARge23Context context,
                 IKindergartensServices KindergartensServices,
