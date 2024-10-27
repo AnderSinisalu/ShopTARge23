@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopTARge23.Data;
 
@@ -11,9 +12,11 @@ using ShopTARge23.Data;
 namespace ShopTARge23.Data.Migrations
 {
     [DbContext(typeof(ShopTARge23Context))]
-    partial class ShopTARge23ContextModelSnapshot : ModelSnapshot
+    [Migration("20241008114309_FileToDatabase")]
+    partial class FileToDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,6 +32,7 @@ namespace ShopTARge23.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ExistingFilePath")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("SpaceshipId")
@@ -46,9 +50,11 @@ namespace ShopTARge23.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<byte[]>("ImageData")
+                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("ImageTitle")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("RealEstateId")
@@ -66,21 +72,23 @@ namespace ShopTARge23.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("BuildingType")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedAt")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("ModifiedAt")
+                    b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("RoomNumber")
+                    b.Property<int>("RoomNumber")
                         .HasColumnType("int");
 
-                    b.Property<double?>("Size")
+                    b.Property<double>("Size")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -94,28 +102,31 @@ namespace ShopTARge23.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("BuiltDate")
+                    b.Property<DateTime>("BuiltDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("CreatedAt")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("Crew")
+                    b.Property<int>("Crew")
                         .HasColumnType("int");
 
-                    b.Property<int?>("EnginePower")
+                    b.Property<int>("EnginePower")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("ModifiedAt")
+                    b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SpaceshipModel")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Typename")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
