@@ -1,0 +1,42 @@
+﻿@model ShopTARge23.Models.OpenWeather.OpenWeatherViewModel;
+
+<div class="container mt-4">
+    <h1 class="font-weight-bold">Forecast</h1>
+    <h3 class="font-weight-bold mb-4">
+        For @Html.DisplayFor(model => model.City), @Html.DisplayFor(model => model.Country)
+    </h3>
+
+    <div class="row mb-2">
+        <div class="col-sm-3 font-weight-bold">Temperature:</div>
+        <div class="col-sm-9">@Model.Temp.ToString("0.##") °C</div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-sm-3 font-weight-bold">Temp Feels like:</div>
+        <div class="col-sm-9">@Model.FeelsLike.ToString("0.##") °C</div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-sm-3 font-weight-bold">Humidity:</div>
+        <div class="col-sm-9">@Model.Humidity %</div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-sm-3 font-weight-bold">Pressure:</div>
+        <div class="col-sm-9">@Model.Pressure Pa</div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-sm-3 font-weight-bold">Wind Speed:</div>
+        <div class="col-sm-9">@Model.WindSpeed.ToString("0.##") m/s</div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-sm-3 font-weight-bold">Weather Condition:</div>
+        <div class="col-sm-9">@Model.Description</div>
+    </div>
+    </dl>
+    <a asp-action="Index" asp-controller="OpenWeather" class="btn btn-success">Back</a>
+</div>
+
+    <div class
