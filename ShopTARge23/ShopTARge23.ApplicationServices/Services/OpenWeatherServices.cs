@@ -9,7 +9,7 @@ namespace ShopTARge23.ApplicationServices.Services
     {
         public async Task<OpenWeatherResultDto> OpenWeatherResult(OpenWeatherResultDto dto)
         {
-            string idOpenWeather = "61db3921e67b92739e34a4b29843bb79";
+            string idOpenWeather = "f00917f8a41f86377b5a57dd3978de24";
             string url = $"https://api.openweathermap.org/data/2.5/weather?q={dto.City}&units=metric&appid={idOpenWeather}";
 
             using (WebClient client = new WebClient())
